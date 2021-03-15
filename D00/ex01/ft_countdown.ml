@@ -5,7 +5,10 @@ let rec ft_countdown n =
 		print_char '\n' ; 
 		ft_countdown (n - 1)
 	end
-	else print_endline "0"
+	else
+	begin	
+		print_int 0 ; print_char '\n'
+	end 
 
 
 let main () =
