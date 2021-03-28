@@ -1,14 +1,9 @@
 let encode list = 
 	let rec loop inputlist outputlist count = match inputlist with 
-(*	| tete::queue	->	if tete = queue then loop queue ([(count, queue)] @ output) 1
-											else loop queue output (count + 1)
-		| head::tail when ([head] <> [tail]) -> loop queue output (count + 1)
-		| head::tail when head = tail -> loop queue ([(count, queue)] @ output) 1
-	*)
 		| [] -> []
 		| head :: (tail :: _ as next)	-> if head = tail then loop next outputlist (count + 1)
 																		else loop next (outputlist @ [(count, head)]) 1 
-		| [x]														-> outputlist @ [(count, x)] 
+		| [x]													-> outputlist @ [(count, x)] 
 	in loop list [] 1
 
 
